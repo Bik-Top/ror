@@ -11,12 +11,13 @@
 
 
     <!-- <h1><%#= tasks_index_path%></h1> -->
-    <%#= yield :nav %>
-     <%= render '/layouts/partials/header' %>
 
-     <%#= render :partial => "/layouts/header.erb" %>
+    <%= yield :nav %>
+    
+     <%#= render '/layouts/partials/header.html.erb' %>
+     <%#= render :partial => "/partial/header.html.erb" %>
     <div class="container">
-      <%= yield %>
+      <%= yield  %>
       <%= yield :content %>
     </div>
   </body>

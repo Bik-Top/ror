@@ -1,0 +1,21 @@
+<h1>Project detailes</h1>
+
+<h2><%= @project.name%></h2> 
+
+ <hr>
+
+  <h1>add new task</h1>
+      
+
+<div class="form-group"> 
+  <%= form_for([@project, @project.tasks.build]) do |f| %> 
+    <div class="form-group">
+      <label for="line_1" style = 'text-transform: uppercase;'>name task 2<%= projects_path%>2</label>
+      <%= f.text_field :name, :class=>"form-control", :id=>"line_1" %>
+    </div>
+    <%= f.submit({ :class => 'btn btn-primary'}) %>
+  <%end%>
+</div>
+
+
+

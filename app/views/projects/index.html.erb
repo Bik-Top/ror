@@ -1,0 +1,20 @@
+ <h1>Projects list</h1>
+
+<% content_for :content do %>
+  <div id="app"> 
+    <% @projects.each do |i| %> 
+      <div class="wrap d-flex align-items-center">
+        <a href="<%= project_path(i)%>" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= i.name %> </h5>
+          <small class="text-muted"><%= i.created_at %> </small>
+          </div>
+          <small class="text-muted">project_id = <%= i.id%></small>
+        </a>
+          <%= link_to 'add new', new_project_path, ({:class=>"btn btn-sm btn-outline-info "}) %>
+          <%= link_to 'edit', edit_project_path(i), ({:class=>"btn btn-sm btn-outline-info "}) %>
+          <%= link_to 'del', project_path(i), method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-sm btn-outline-info" %>
+      </div>
+    <% end %>
+  </div> 
+<% end %>

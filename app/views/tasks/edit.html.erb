@@ -1,0 +1,19 @@
+<h1>edit page</h1>
+
+
+<div class="form-group"> 
+  <%= form_for :task, url: task_path(@task), method: :patch do |f| %>
+   
+    <%if @task.errors.any? %>
+      <% @task.errors.full_messages.each do |msg| %>
+        <p class='alert alert-danger'><%= msg %></p>
+      <% end %>
+    <% end %>
+
+    <div class="form-group">
+      <label for="line_1" style = 'text-transform: uppercase;'>edited <%= task_path(@task)%></label>
+      <%= f.text_field :name, :class=>"form-control", :id=>"line_1" %>
+    </div>
+    <%= f.submit({ :class => 'btn btn-primary'}) %>
+  <%end%>
+</div>

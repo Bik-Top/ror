@@ -9,6 +9,15 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
+import("bootstrap")
+import("../stylesheets/application") 
+
+
+// document.addEventListener("turbolink:load", $('[data-toggle="tooltipe"]').tooltip())
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
